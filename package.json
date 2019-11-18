@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "guacamole-common-js": "^1.1.0-b",
     "vue": "^2.6.10"
   },
   "devDependencies": {
