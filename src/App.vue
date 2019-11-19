@@ -42,22 +42,18 @@
             </div>
 
             <div class="field">
-                <label for="nla">Use NLA (Windows RDP)</label>
-                <span>
-              <input type="checkbox" v-model="nla" id="nla">
-            </span>
-            </div>
-
-            <div class="field">
-                <label for="forcehttp">Force HTTP Tunnel</label>
-                <span>
-              <input type="checkbox" v-model="forceHttp" id="forcehttp">
-            </span>
+                <label for="nla">Security</label>
+                <input type="text" v-model="security" id="nla" placeholder="type nla here for Network Level Authentication">
             </div>
 
             <div class="field">
                 <label>Query string</label>
                 <span class="pl-1">{{scrubbedQuery}}</span>
+            </div>
+
+            <div class="field">
+                <label for="forcehttp">Force HTTP Tunnel</label>
+                <span><input type="checkbox" v-model="forceHttp" id="forcehttp"></span>
             </div>
 
             <div class="center">
@@ -86,7 +82,7 @@
         user: '',
         pass: '',
         ignoreCert: true,
-        nla: false,
+        security: '',
         forceHttp: false,
       }
     },
@@ -97,7 +93,7 @@
           hostname: this.hostname,
           port: this.port,
           'ignore-cert': this.ignoreCert,
-          nla: this.nla,
+          security: this.security,
           username: this.user,
           password: this.pass
         }
@@ -152,8 +148,8 @@
     }
 
     .container {
-      width: 100%;
-      height: 100%;
+        width: 100%;
+        height: 100%;
     }
 
     #app {
@@ -166,7 +162,7 @@
     }
 
     h1 {
-      text-align: center;
+        text-align: center;
     }
 
     .field {
@@ -187,6 +183,9 @@
         margin-left: 1rem;
         margin-right: 1rem;
         font-size: 16pt;
+        border: 1px solid black;
+        border-radius: 2px;
+        padding-left: 0.5rem;
     }
 
     .center {
